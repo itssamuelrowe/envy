@@ -1,0 +1,34 @@
+{
+    "name": "@envy/cli",
+    "license": "MIT",
+    "private": false,
+    "version": "0.1.0",
+    "main": "./build/source/index.js",
+    "bin": {
+        "envy": "./bin/envy"
+    },
+    "files": [
+        "bin/**/**",
+        "build/**/*",
+        "public/**/*",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "clean": "rm -rf build ",
+        "build": "yarn clean && tsc --project tsconfig.json",
+        "watch": "yarn clean && tsc --project tsconfig.json --watch",
+        "start": "node ./bin/envy",
+        "local": "yarn build && npm link",
+        "push": "yarn build && yarn publish --access public"
+    },
+    "dependencies": {
+        "axios": "^0.24.0",
+        "chalk": "^4.1.2",
+        "commander": "^8.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.11",
+        "typescript": "^4.4.4"
+    }
+}
