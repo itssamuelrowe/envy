@@ -2,6 +2,10 @@
 
 Envy allows you to synchronize environment variables across different machines.
 
+> NOTE: As of this writing, Envy is a proof-of-concept and is not meant for production.
+> Mainly because it lacks authentication, authorization, and encryption. See below for
+> a list of features that are yet to be implemented.
+
 Let's say you are working with five other developers on an API. If the API needs environment variables, they will vary across different environments. To keep your secrets safe, you cannot store `.env` in GitHub. Therefore, each developer will have a local copy of the `.env` file.
 
 Sometimes a developer may update the `.env` file while working on a feature. Sometimes they may forget to update the `.sample.env` file or update the team with the new environment variable. This leads to some frustrating and useless bug when the other developer is testing the feature. Sometimes you end up spending an hour on a bug and then discover that it was due to outdated environment variables.
